@@ -2,109 +2,112 @@
 
 A command-line utility written in Python for checking prime numbers and generating sequences of prime numbers.
 
-**Version:** `0.1` — Work in Progress
-**Author:** Taha Noursalehi (`TAH000k`)
+**Version:** 0.1.0
+**Status:** Work in Progress
+**Author:** Taha Noursalehi ([TAH000k](https://github.com/TAH000k))
 
 ## Overview
 
-Prime Number Utility (PNU) is a beginner-friendly Python project that provides an interactive terminal interface for working with prime numbers.
+Prime Number Utility (PNU) is a lightweight command-line application designed to perform basic prime number operations. It allows users to check whether an integer is prime and generate sequences of prime numbers using different output modes.
 
-The project is currently under development. Some features and output formats may change in future releases.
+The project is built entirely with Python's standard library and does not require any third-party packages.
 
 ## Features
 
-* **Prime Checking:** Determine whether an integer is prime or composite.
-* **Prime Generation:** Generate the first `N` prime numbers.
-* **Multiple Output Modes:** Display prime numbers one by one or as a list.
-* **File Export:** Save generated results in supported formats:
+* **Prime Checking:** Determine whether an integer is prime.
+* **Prime Generation:** Generate prime numbers up to a specified limit.
+* **Multiple Output Modes:** Display generated prime numbers one by one or as a list.
+* **File Export:** Save results in supported formats:
 
   * `.txt`
   * `.jsonc`
-  * `.csv` (available in the one-by-one output mode)
-* **Colored Terminal Output:** Use ANSI escape codes to make terminal messages easier to distinguish.
-* **Interactive Menu:** Navigate the program through a simple command-line interface.
+  * `.csv` (available in OneByOne mode only)
+* **Colored Terminal Output:** Use ANSI escape sequences to improve readability.
+* **Interactive Menu:** Access the program's features through a menu-driven interface.
 
 ## Requirements
 
 * Python 3.8 or later
-* No third-party Python packages required
-
-The program uses Python's built-in `math` module.
+* No third-party dependencies
 
 ## Getting Started
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/TAH000k/Prime-Number-Utility.git
 ```
 
-### 2. Navigate to the project directory
+### 2. Navigate to the Project Directory
 
 ```bash
 cd Prime-Number-Utility
 ```
 
-### 3. Run the program
+### 3. Run the Program
 
 ```bash
 python main.py
 ```
 
-If your system uses `python3` to launch Python, run:
+On systems where Python 3 is invoked using `python3`, run:
 
 ```bash
 python3 main.py
 ```
 
-> Make sure the main script is named `main.py`, or replace the filename in the command with the actual filename.
-
 ## Usage
 
-After launching the program, select an option from the main menu.
+Launch the program and follow the interactive menu to select an operation.
 
 ### Check a Number
 
-Enter an integer to check whether it is prime or composite.
+Enter an integer to check whether it is prime.
 
-Numbers less than or equal to 1 are not considered prime or composite by this program.
+A prime number is an integer greater than 1 that has exactly two positive divisors: 1 and itself.
+
+Integers less than or equal to 1 are neither prime nor composite.
 
 ### Generate Prime Numbers
 
-Enter how many prime numbers you want to generate, choose an output mode, and optionally save the results to a file.
+Choose the prime generation option and provide the requested limit.
 
-Available output modes:
+The program supports two output modes:
 
-1. **One by One:** Print each prime number with its index.
-2. **In List:** Generate the numbers and display them as a Python list.
+* **OneByOne:** Display prime numbers individually.
+* **InList:** Display the generated prime numbers together as a list.
+
+Depending on the selected mode and export format, results can also be saved to a file.
 
 ## How It Works
 
-The primality-checking function uses trial division:
+Prime checking uses the trial division method.
 
-1. Numbers less than or equal to 1 are rejected as prime numbers.
+The algorithm follows these basic steps:
+
+1. Numbers less than or equal to 1 are classified as non-prime.
 2. The number 2 is handled as a special case.
-3. Other even numbers are rejected.
+3. Even numbers greater than 2 are rejected as prime.
 4. Odd divisors are checked up to the integer square root of the number.
+5. If no divisor is found, the number is prime.
 
-This approach avoids checking every integer up to the input number.
+Checking divisors only up to the square root reduces the number of operations required compared with checking every possible divisor.
 
 ## Project Status
 
 **Work in Progress**
 
-Planned improvements may include:
+PNU is an ongoing project. Potential future improvements include:
 
-* More robust input validation
+* More robust input validation and error handling
 * Improved file handling and output formatting
-* Performance improvements for large prime-number sequences
-* Additional features and tests
+* Performance optimizations
+* Additional features and automated tests
 
 ## Author
 
-**Taha Noursalehi**
-GitHub: [@TAH000k](https://github.com/TAH000k)
+**Taha Noursalehi** — [@TAH000k](https://github.com/TAH000k)
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the [MIT License](LICENSE).
